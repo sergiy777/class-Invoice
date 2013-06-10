@@ -6,7 +6,7 @@ using namespace std;
 class Invoice
 {
 public:
-  void setPartNumber (string number)
+	void setPartNumber (string number)
 	{
 		product = number;
 	}
@@ -48,10 +48,13 @@ public:
 	{
 		return prices;
 	}
-	void getInvoiceAmount()
+	int getInvoiceAmount()
 	{
 		float total = quantity * prices;
-		cout << "Artikul tovara:" << getPartArtikul()<< "\nProdukt#: " << getPartNumber() << "\nopisanie: " << getPartDescription() << "\nKol-vo: " << getQuantityPurchased() << "\nCena: " << getPriceItem() << "\nego obshaya: " << total << endl;
+		int myTotal=total;
+		cout << "Artikul tovara:" << getPartArtikul()<< "\nProdukt#: " << getPartNumber() << "\nopisanie: " << getPartDescription() << "\nKol-vo: " << getQuantityPurchased() << "\nCena: " << getPriceItem() << "\nego obshaya: " << myTotal << endl;
+		
+		return myTotal; //const_cast<float>
 	}
 private:
 	int quantity;
